@@ -1,0 +1,9 @@
+name: Result
+type: module
+description: 'Provides a result entity.'
+package: custom
+core: 8.x
+core_version_requirement: ^8 || ^9
+dependencies:
+  - student
+configure: entity.result.settings
