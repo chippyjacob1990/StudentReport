@@ -1,0 +1,5 @@
+result.add_form:
+  route_name: entity.result.add_form
+  title: 'Add result'
+  appears_on:
+    - entity.result.collection

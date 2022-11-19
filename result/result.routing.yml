@@ -1,0 +1,15 @@
+entity.result.settings:
+  path: 'admin/structure/result'
+  defaults:
+    _form: '\Drupal\result\Form\ResultSettingsForm'
+    _title: 'Result'
+  requirements:
+    _permission: 'administer result'
+
+entity.result.export:
+  path: 'admin/config/result'
+  defaults:
+    _form: '\Drupal\result\Form\ExportForm'
+    _title: 'Download Excel File'
+  requirements:
+    _permission: 'access administration pages'
