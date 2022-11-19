@@ -147,7 +147,7 @@ class ExportForm extends FormBase {
         $flag = TRUE;
       }
       // Filter data.
-      array_walk($row, 'filter_data');
+      array_walk($row, 'filterData');
       $result_row = array_values($row);
       if ($result_row[3] > $upper_score) {
         $result_row[3] = '<span style="color:green">' . $result_row[3] . '</span>';
@@ -161,18 +161,17 @@ class ExportForm extends FormBase {
     exit;
   }
 
-}
-
-/**
- * Filter the data.
- *
- * @param string $str
- *   String to process.
- */
-function filter_data(&$str) {
-  $str = preg_replace("/\t/", "\\t", $str);
-  $str = preg_replace("/\r?\n/", "\\n", $str);
-  if (strstr($str, '"')) {
-    $str = '"' . str_replace('"', '""', $str) . '"';
+  /**
+   * Filter the data.
+   *
+   * @param string $str
+   *   String to process.
+   */
+  function filterData(&$str) {
+    $str = preg_replace("/\t/", "\\t", $str);
+    $str = preg_replace("/\r?\n/", "\\n", $str);
+    if (strstr($str, '"')) {
+      $str = '"' . str_replace('"', '""', $str) . '"';
+    }
   }
 }
